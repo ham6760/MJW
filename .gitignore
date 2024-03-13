@@ -3,5 +3,5 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 # Project exclude paths
-/.idea/
+.idea/
 /out/
