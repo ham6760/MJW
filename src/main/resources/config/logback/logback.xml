@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration debug="false"> <!-- scan="true" scanPeriod="60 seconds" -->
+    
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>[%d{MM-dd HH:mm:ss}] %-5p %F:%L : %m%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="DAILY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <append>true</append>
+        <file>./WEB-INF/log/webapp.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>webapp.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory> <!-- 지정 일수만 로그파일 유지 -->
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>[%d{MM-dd HH:mm:ss}] %-5p %F:%L : %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root>
+        <level value="info" />
+        <appender-ref ref="STDOUT" />
+        <!-- <appender-ref ref="DAILY" /> -->
+    </root>
+
+</configuration>
