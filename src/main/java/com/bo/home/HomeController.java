@@ -1,6 +1,7 @@
 package com.bo.home;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -8,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
 
-    @RequestMapping(value="")
+    @GetMapping(value="")
     public String home(){
-        return "../index";
+        return "index";
     }
 }
