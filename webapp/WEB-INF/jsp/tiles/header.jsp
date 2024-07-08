@@ -8,7 +8,6 @@
     <div class="header-wrap">
         <nav class="navbar navbar-expand-lg navbar-white bg-gray">
             <div class="container px-5">
-                <%--<a class="navbar-brand" href="/">미장원by태현</a>--%>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
@@ -98,7 +97,6 @@
             <div class="mo-header-inner">
                 <!-- mo-navbar -->
                 <div class="mo-navbar">
-                    <h1 class="logo"><a href="#"><img src="" alt=""></a></h1>
                     <div id="nav-icon1" class="mo-navbar-btn mo-btn-open">
                         <span></span>
                         <span></span>
@@ -206,7 +204,8 @@
         </div>
     </div>
     <div class="cs-tel">
-        <h3 class="mb-5"><em>전화예약 02-517-0792</em></h3>
+        <img src="<c:url value="/resources/img/icon_tel.png"/>"  alt="전화 아이콘"/>
+        <h3 class="mb-5"><em style="color: #ffffff">전화예약 02-517-0792</em></h3>
     </div>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>

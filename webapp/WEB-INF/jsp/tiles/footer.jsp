@@ -7,18 +7,9 @@
 <body>
 <footer class="footer text-center">
     <div class="container px-4 px-lg-5">
-        <ul class="list-inline mb-5">
-            <li class="list-inline-item">
-                <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
-            </li>
-            <li class="list-inline-item">
-                <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-twitter"></i></a>
-            </li>
-            <li class="list-inline-item">
-                <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-            </li>
-        </ul>
-        <p class="text-muted small mb-0">Copyright &copy; Your Website 2023</p>
+        <p class="text-white-50 small mb-0">상호명: 미장원by태현 | 대표 : 김지영 | 사업자등록번호 : 211-10-85501 | 주소 : 서울특별시 강남구 도산대로75길 14-1</p>
+        <p class="text-white-50 small mb-0">Adr : 14-1, Dosan-daero 75-gil, Gangnam-gu, Seoul, Republic of Korea | Tel.02-517-0792</p>
+        <p class="text-white-50 small mb-0">Copyright © 2015 미장원by태현 All Rights Reserved. Hosting by inpiad</p>
     </div>
 </footer>
 </body>

@@ -10834,6 +10834,7 @@ html {
 .content-section {
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/resources/img/main/main_background4.jpg");
 }
 
 .content-section-heading h2, .content-section-heading .h2 {
@@ -10859,6 +10860,7 @@ html {
   color: #fff;
   background: #607d8b;
   line-height: 50px;
+  z-index: 2;
 }
 .scroll-to-top:focus, .scroll-to-top:hover {
   color: #fff;
@@ -10958,23 +10960,18 @@ html {
   padding: 1.25rem 2.5rem;
 }
 
-.callout {
+.shop {
   padding: 15rem 0;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../assets/img/bg-callout.jpg");
-  background-position: center center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/resources/img/main/main_background2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-}
-.callout h2, .callout .h2 {
-  font-size: 3.5rem;
-  font-weight: 700;
-  display: block;
-  max-width: 30rem;
+  height: 100%;
 }
 
 footer.footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #1a1e21;
 }
 footer.footer .social-link {
   display: block;
@@ -10994,6 +10991,7 @@ footer.footer .social-link:hover {
 
 .map {
   height: 30rem;
+  z-index: 0;
 }
 .map iframe {
   pointer-events: none;
@@ -11015,7 +11013,7 @@ footer.footer .social-link:hover {
   height: auto;
   padding-top: 8rem;
   padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../../img/main_background.jpg");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/resources/img/main/main_background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -11093,7 +11091,7 @@ footer.footer .social-link:hover {
             clip-path: inset(2rem);
   }
   .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
+    background-color: rgba(158, 158, 158, 0.7);
     -webkit-clip-path: inset(2rem);
             clip-path: inset(2rem);
   }

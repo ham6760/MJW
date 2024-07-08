@@ -6,142 +6,106 @@
 <html>
     <body id="page-top">
     <!-- Header-->
-    <header class="masthead d-flex align-items-center">
-        <div class="container px-4 px-lg-5 text-center">
-            <h1 class="mb-1">Stylish Portfolio</h1>
-            <h3 class="mb-5"><em>전화예약 02-517-0792</em></h3>
-        </div>
-    </header>
-    <!-- About-->
-    <section class="content-section bg-light" id="about">
-        <div class="container px-4 px-lg-5 text-center">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-lg-10">
-                    <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-                    <p class="lead mb-5">
-                        This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-                        <a href="https://unsplash.com/">Unsplash</a>
-                        !
-                    </p>
-                    <a class="btn btn-dark btn-xl" href="#services">What We Offer</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services-->
-    <section class="content-section bg-primary text-white text-center" id="services">
-        <div class="container px-4 px-lg-5">
-            <div class="content-section-heading">
-                <h3 class="text-secondary mb-0">Services</h3>
-                <h2 class="mb-5">What We Offer</h2>
-            </div>
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-screen-smartphone"></i></span>
-                    <h4><strong>Responsive</strong></h4>
-                    <p class="text-faded mb-0">Looks great on any screen size!</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-pencil"></i></span>
-                    <h4><strong>Redesigned</strong></h4>
-                    <p class="text-faded mb-0">Freshly redesigned for Bootstrap 5.</p>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-like"></i></span>
-                    <h4><strong>Favorited</strong></h4>
-                    <p class="text-faded mb-0">
-                        Millions of users
-                        <i class="fas fa-heart"></i>
-                        Start Bootstrap!
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <span class="service-icon rounded-circle mx-auto mb-3"><i class="icon-mustache"></i></span>
-                    <h4><strong>Question</strong></h4>
-                    <p class="text-faded mb-0">I mustache you a question...</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Callout-->
-    <section class="callout">
-        <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mx-auto mb-5">
-                Welcome to
-                <em>your</em>
-                next website!
-            </h2>
-            <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
-        </div>
-    </section>
+    <header class="masthead d-flex align-items-center"></header>
+    <!-- shop-->
+    <section class="shop"></section>
     <!-- Portfolio-->
     <section class="content-section" id="portfolio">
         <div class="container px-4 px-lg-5">
-            <div class="content-section-heading text-center">
-                <h3 class="text-secondary mb-0">Portfolio</h3>
-                <h2 class="mb-5">Recent Projects</h2>
-            </div>
             <div class="row gx-0">
                 <div class="col-lg-6">
                     <a class="portfolio-item" href="#!">
                         <div class="caption">
                             <div class="caption-content">
-                                <div class="h2">Stationary</div>
-                                <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                                <div class="container px-4 px-lg-5 text-center">
+                                    <h1 class="mb-1 fs-2 text-nowrap">헤어</h1>
+                                </div>
                             </div>
                         </div>
-                        <img class="img-fluid" src="<c:url value="/resources/bootstrap/assets/img/portfolio-1.jpg"/>" alt="..." />
+                        <img class="img-fluid" src="<c:url value="/resources/img/main/main_photo1.png"/>" alt="..." />
                     </a>
                 </div>
                 <div class="col-lg-6">
                     <a class="portfolio-item" href="#!">
                         <div class="caption">
                             <div class="caption-content">
-                                <div class="h2">Ice Cream</div>
-                                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+                                <div class="container px-4 px-lg-5 text-center">
+                                    <h1 class="mb-1 fs-2 text-nowrap">메이크업</h1>
+                                </div>
                             </div>
                         </div>
-                        <img class="img-fluid" src="<c:url value="/resources/bootstrap/assets/img/portfolio-2.jpg"/>" alt="..." />
+                        <img class="img-fluid" src="<c:url value="/resources/img/main/main_photo1.png"/>" alt="..." />
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <a class="portfolio-item" href="#!">
                         <div class="caption">
                             <div class="caption-content">
-                                <div class="h2">Strawberries</div>
-                                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+                                <div class="container px-4 px-lg-5 text-center">
+                                    <h1 class="mb-1 fs-4 text-nowrap">웨딩</h1>
+                                </div>
                             </div>
                         </div>
-                        <img class="img-fluid" src="<c:url value="/resources/bootstrap/assets/img/portfolio-3.jpg"/>" alt="..." />
+                        <img class="img-fluid" src="<c:url value="/resources/img/main/main_photo1.png"/>" alt="..." />
                     </a>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <a class="portfolio-item" href="#!">
                         <div class="caption">
                             <div class="caption-content">
-                                <div class="h2">Workspace</div>
-                                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+                                <div class="container px-4 px-lg-5 text-center">
+                                    <h1 class="mb-1 fs-4 text-nowrap">연예인</h1>
+                                </div>
                             </div>
                         </div>
-                        <img class="img-fluid" src="<c:url value="/resources/bootstrap/assets/img/portfolio-4.jpg"/>" alt="..." />
+                        <img class="img-fluid" src="<c:url value="/resources/img/main/main_photo1.png"/>" alt="..." />
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a class="portfolio-item" href="#!">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <div class="container px-4 px-lg-5 text-center">
+                                    <h1 class="mb-1 fs-4 text-nowrap">네일아트</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="<c:url value="/resources/img/main/main_photo1.png"/>" alt="..." />
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Call to Action-->
-    <section class="content-section bg-primary text-white">
-        <div class="container px-4 px-lg-5 text-center">
-            <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-            <a class="btn btn-xl btn-light me-4" href="#!">Click Me!</a>
-            <a class="btn btn-xl btn-dark" href="#!">Look at Me!</a>
-        </div>
-    </section>
     <!-- Map-->
-    <div class="map" id="contact">
-        <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a></small>
-    </div>
+    <div class="map" id="map"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=95169a370f842e662fbc37c0039255fb"></script>
+    <script type="text/javascript">
+        const container = document.getElementById('map');
+        const options = {
+            center: new kakao.maps.LatLng(37.525373437461056, 127.0460883143023),
+            level: 4
+        };
+
+        const map = new kakao.maps.Map(container, options);
+        const markerPosition  = new kakao.maps.LatLng(37.525373437461056, 127.0460883143023);
+        // 마커를 생성합니다
+        const marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map);
+
+        const iwContent = '<div style="padding:5px;">미장원바이태현 <br><a href="https://map.kakao.com/link/map/미장원바이태현,37.525373437461056, 127.0460883143023" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/미장원바이태현,37.525373437461056, 127.0460883143023" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+            iwPosition = new kakao.maps.LatLng(37.525373437461056, 127.0460883143023); //인포윈도우 표시 위치입니다
+
+        // 인포윈도우를 생성합니다
+        const infowindow = new kakao.maps.InfoWindow({
+            position : iwPosition,
+            content : iwContent
+        });
+
+        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+        infowindow.open(map, marker);
+
+    </script>
     </body>
 </html>
