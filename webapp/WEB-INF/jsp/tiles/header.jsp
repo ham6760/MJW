@@ -16,9 +16,10 @@
                                     <img class="image" src="<c:url value="/resources/img/menu/gn_btn1.png"/>" alt="미장원by태현 소개">
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                <li><a class="dropdown-item" href="blog-home.html">인사말<br/>Greeting | 问候语</a></li>
+                                <li><a class="dropdown-item" href="blog-post.html">샵<br/>Shop | 店</a></li>
+                                <li><a class="dropdown-item" href="blog-post.html">오시는길<br/>Location | 位置</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -27,9 +28,10 @@
                                     <img class="image" src="<c:url value="/resources/img/menu/gn_btn2.png"/>" alt="헤어">
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                <li><a class="dropdown-item" href="blog-home.html">디자이너<br/>Designer | 设计师</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">트렌드<br/>Trend | 潮流</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">갤러리<br/>Gallery | 图库</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -38,9 +40,10 @@
                                     <img class="image" src="<c:url value="/resources/img/menu/gn_btn3.png"/>" alt="메이크업">
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                <li><a class="dropdown-item" href="blog-home.html">디자이너<br/>Designer | 设计师</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">트렌드<br/>Trend | 潮流</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">갤러리<br/>Gallery | 图库</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -49,9 +52,9 @@
                                     <img class="image" src="<c:url value="/resources/img/menu/gn_btn4.png"/>" alt="웨딩">
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                <li><a class="dropdown-item" href="blog-home.html">트렌드<br/>Trend | 潮流</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">갤러리<br/>Gallery | 图库</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -60,9 +63,10 @@
                                     <img class="image" src="<c:url value="/resources/img/menu/gn_btn5.png"/>" alt="연예인">
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                <li><a class="dropdown-item" href="blog-home.html">매거진<br/>Magazine | 杂志</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">뮤비X앨범<br/>Music video | 音乐视频</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">광고<br/>Advertisement | 广告</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -71,9 +75,10 @@
                                     <img class="image" src="<c:url value="/resources/img/menu/gn_btn6.png"/>" alt="네일아트">
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="blog-home.html">Blog Home</a></li>
-                                <li><a class="dropdown-item" href="blog-post.html">Blog Post</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                <li><a class="dropdown-item" href="blog-home.html">디자이너<br/>Designer | 设计师</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">트렌드<br/>Trend | 潮流</a></li>
+                                <li><a class="dropdown-item" href="blog-home.html">갤러리<br/>Gallery | 图库</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -82,9 +87,9 @@
                                     <img class="image" src="<c:url value="/resources/img/menu/gn_btn7.png"/>" alt="고객센터">
                                 </div>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="portfolio-overview.html">Portfolio Overview</a></li>
-                                <li><a class="dropdown-item" href="portfolio-item.html">Portfolio Item</a></li>
+                            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                                <li><a class="dropdown-item" href="portfolio-overview.html">공지사항<br/>Notice | 通知</a></li>
+                                <li><a class="dropdown-item" href="portfolio-overview.html">채용안내<br/>Recruit l 招聘</a></li>
                             </ul>
                         </li>
                     </ul>
