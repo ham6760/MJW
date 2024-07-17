@@ -5,3 +5,4 @@ target/
 # Project exclude paths
 .idea/
 !/MJW.iml
+!/out/
