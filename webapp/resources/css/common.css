@@ -4,6 +4,7 @@
 
 html, body {
     width:100%;
+    scroll-behavior: smooth;
 }
 
 .header-wrap {
@@ -66,6 +67,7 @@ html, body {
 
 /*media 모바일*/
 @media screen and (max-width: 992px){
+    .sub_menu {display: none;}
     /*::mo-header*/
     .header-wrap{ display:none; }
     .mo-header-wrap{ position:relative; display:block; }
@@ -117,4 +119,34 @@ html, body {
     color: #000000;
     line-height: 50px;
     z-index: 1;
+}
+
+.sub_menu{background: #494949;text-align: center;position: relative;z-index: 1;height: 50px;}
+.sub_menu ul{ list-style: none; border-bottom: 1px solid #626262;display:block;clear: both}
+.sub_menu ul>li{float: left;width: 25%;position: relative}
+.sub_menu ul>li>strong{display: block}
+.sub_menu ul>li>strong a{display: block;color:#bebebf;height: 50px;line-height: 50px;box-sizing: border-box;border-right: 1px solid #626262;font-size:16px;border-bottom: 1px solid #626262;}
+.sub_menu ul>li.cur>strong a{border-bottom: 5px solid #ed1c24;color:#fff}
+.sub_menu ul>li:hover>strong a{color:#fff}
+.sub_menu ul>li:first-child>strong a{border-left: 1px solid #626262;}
+.sub_menu ul li dl a{display: block;font-size:16px;color:#bebebf;font-size:16px;height: 50px;line-height: 50px;background: #494949;border-left: 1px solid #626262;border-right: 1px solid #626262;border-bottom: 1px solid #626262;}
+.sub_menu ul li dl dd:hover a{color:#fff}
+.sub_menu.w20p ul>li {width:20%;}
+.sub_menu.w33p ul>li {width:33.3%;}
+
+.inner { margin: 0 auto; width: 1150px; }
+
+@media all and (max-width:1150px){
+    .inner{width:1024px}
+}
+
+@media all and (max-width:1024px){
+    .inner{width:768px}
+    .sub_menu ul>li>strong.depth{background-position: 140px center}
+}
+
+@media (min-width: 992px) {
+    .masthead.sub {
+        height: 65vh;
+    }
 }

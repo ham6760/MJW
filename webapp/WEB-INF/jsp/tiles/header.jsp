@@ -17,7 +17,7 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                                <li><a class="dropdown-item" href="blog-home.html">인사말<br/>Greeting | 问候语</a></li>
+                                <li><a class="dropdown-item" href="intro/index">인사말<br/>Greeting | 问候语</a></li>
                                 <li><a class="dropdown-item" href="blog-post.html">샵<br/>Shop | 店</a></li>
                                 <li><a class="dropdown-item" href="blog-post.html">오시는길<br/>Location | 位置</a></li>
                             </ul>
@@ -88,7 +88,7 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                                <li><a class="dropdown-item" href="portfolio-overview.html">공지사항<br/>Notice | 通知</a></li>
+                                <li><a class="dropdown-item" href="/csc/index">공지사항<br/>Notice | 通知</a></li>
                                 <li><a class="dropdown-item" href="portfolio-overview.html">채용안내<br/>Recruit l 招聘</a></li>
                             </ul>
                         </li>

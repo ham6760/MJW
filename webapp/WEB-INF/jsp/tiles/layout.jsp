@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Stylish Portfolio - Start Bootstrap Template</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="<c:url value="/resources/bootstrap/assets/favicon.ico"/>" />
     <!-- Font Awesome icons (free version)-->
@@ -20,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="<c:url value="/resources/bootstrap/css/styles.css?v=240628"/>" rel="stylesheet" />
-    <link href="<c:url value="/resources/css/common.css?v=240628"/>" rel="stylesheet" />
+    <link href="<c:url value="/resources/css/common.css?v=241112"/>" rel="stylesheet" />
 </head>
 <body>
     <!-- header -->

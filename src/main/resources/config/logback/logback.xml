@@ -22,11 +22,11 @@
         </encoder>
     </appender>
 
-    <logger name="org.springframework.web.servlet.view.tiles3" level="DEBUG"/>
-    <logger name="org.apache.tiles" level="DEBUG"/>
+    <logger name="org.springframework.web.servlet.view.tiles3" level="info"/>
+    <logger name="org.apache.tiles" level="info"/>
 
     <root>
-        <level value="INFO" />
+        <level value="info" />
         <appender-ref ref="STDOUT" />
         <!-- <appender-ref ref="DAILY" /> -->
     </root>

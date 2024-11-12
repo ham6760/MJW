@@ -11,7 +11,10 @@
     </definition>
 
     <!-- content -->
-    <definition name="index" extends="layout">
-        <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+    <definition name="*" extends="layout">
+        <put-attribute name="body" value="/WEB-INF/jsp/{1}.jsp" />
+    </definition>
+    <definition name="*/*" extends="layout">
+        <put-attribute name="body" value="/WEB-INF/jsp/{1}/{2}.jsp" />
     </definition>
 </tiles-definitions>
