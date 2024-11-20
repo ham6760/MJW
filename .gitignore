@@ -2,7 +2,11 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-# Project exclude paths
-.idea/
-!/MJW.iml
-!/out/
+# IntelliJ IDEA files
+/.idea/
+/*.iml
+/out/
+
+# Gradle build artifacts
+/build/
+/.gradle/

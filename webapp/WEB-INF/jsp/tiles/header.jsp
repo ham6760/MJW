@@ -9,6 +9,7 @@
         <nav class="navbar navbar-expand-lg navbar-white bg-gray">
             <div class="container px-5">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <a class="navbar-brand" href="<c:url value="/"/>"><img src="<c:url value="/resources/img/main/logo.png"/>" alt="로고"></a>
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle-split" href="#" role="button">
@@ -17,7 +18,7 @@
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
-                                <li><a class="dropdown-item" href="intro/index">인사말<br/>Greeting | 问候语</a></li>
+                                <li><a class="dropdown-item" href="<c:url value="/intro/index"/>">인사말<br/>Greeting | 问候语</a></li>
                                 <li><a class="dropdown-item" href="blog-post.html">샵<br/>Shop | 店</a></li>
                                 <li><a class="dropdown-item" href="blog-post.html">오시는길<br/>Location | 位置</a></li>
                             </ul>
@@ -102,6 +103,7 @@
             <div class="mo-header-inner">
                 <!-- mo-navbar -->
                 <div class="mo-navbar">
+                    <a class="navbar-brand" href="#page-top"><img src="/resources/img/main/logo.png" alt="로고"></a>
                     <div id="nav-icon1" class="mo-navbar-btn mo-btn-open">
                         <span></span>
                         <span></span>

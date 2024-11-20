@@ -17,13 +17,25 @@
         </div>
     </div>
     <!-- shop-->
-    <section class="shop"></section>
+    <section class="">
+        안녕하세요. 김태현 입니다.
+        국내 최고의 디자이너 팀과 함께 보다 업그레이드된 기술과 최상의 서비스로 고객님을 모시겠습니다.
+        언제나 초심을 잃지않고 최선을 다하겠습니다.
+
+        Hello. The Kimtaehyun.
+        We will serve the customers with more technology and excellent service has been upgraded with the nation's top designers team.
+        Always do our best without losing the original intention.
+
+        大家好。The Kimtaehyun。
+        我们将竭诚为客户提供更多的技术和优质的服务已经升级，国内顶级设计师团队。
+        始终做到最好不失初衷。
+    </section>
     <!-- Portfolio-->
     <section class="content-section" id="portfolio">
         <div class="container px-4 px-lg-5">
             <div class="row gx-0">
                 <div class="col-lg-6">
-                    <a class="portfolio-item" href="/intro/index">
+                    <a class="portfolio-item" href="<c:url value="/intro/index"/>">
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="container px-4 px-lg-5 text-center">
@@ -85,36 +97,5 @@
             </div>
         </div>
     </section>
-    <!-- Map-->
-    <div class="map" id="map"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=95169a370f842e662fbc37c0039255fb"></script>
-    <script type="text/javascript">
-        const container = document.getElementById('map');
-        const options = {
-            center: new kakao.maps.LatLng(37.525373437461056, 127.0460883143023),
-            level: 4
-        };
-
-        const map = new kakao.maps.Map(container, options);
-        const markerPosition  = new kakao.maps.LatLng(37.525373437461056, 127.0460883143023);
-        // 마커를 생성합니다
-        const marker = new kakao.maps.Marker({
-            position: markerPosition
-        });
-        marker.setMap(map);
-
-        const iwContent = '<div style="padding:5px;">미장원바이태현 <br><a href="https://map.kakao.com/link/map/미장원바이태현,37.525373437461056, 127.0460883143023" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/미장원바이태현,37.525373437461056, 127.0460883143023" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-            iwPosition = new kakao.maps.LatLng(37.525373437461056, 127.0460883143023); //인포윈도우 표시 위치입니다
-
-        // 인포윈도우를 생성합니다
-        const infowindow = new kakao.maps.InfoWindow({
-            position : iwPosition,
-            content : iwContent
-        });
-
-        // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-        infowindow.open(map, marker);
-
-    </script>
     </body>
 </html>
