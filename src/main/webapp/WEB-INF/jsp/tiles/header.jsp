@@ -6,7 +6,7 @@
 <html lang="ko">
     <body id="page-top">
     <div class="header-wrap">
-        <nav class="navbar navbar-expand-lg navbar-white bg-gray">
+        <nav class="navbar navbar-expand-lg navbar-white bg-gray-70">
             <div class="container px-5">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <a class="navbar-brand" href="<c:url value="/"/>"><img src="<c:url value="/resources/img/main/logo.png"/>" alt="로고"></a>
@@ -122,7 +122,7 @@
                                 </a>
                                 <div class="collapse" id="intro" aria-labelledby="headingOne" data-bs-parent="#navbar">
                                     <nav class="sb-sidenav-menu-nested nav accordion">
-                                        <a class="nav-link" href="#">인사말 | Greeting | 问候语</a>
+                                        <a class="nav-link" href="<c:url value="/intro/index"/>">인사말 | Greeting | 问候语</a>
                                         <a class="nav-link" href="#">샵 | Shop | 店</a>
                                         <a class="nav-link" href="#">오시는길 | Location | 位置</a>
                                     </nav>

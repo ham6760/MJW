@@ -24,6 +24,7 @@ org-springframework-spring-jdbc = "4.3.25.RELEASE"
 org-springframework-spring-web = "4.3.25.RELEASE"
 org-springframework-spring-webmvc = "4.3.25.RELEASE"
 taglibs-standard = "1.1.2"
+slf4j = "1.7.32"
 
 [libraries]
 cglib-cglib = { module = "cglib:cglib", version.ref = "cglib-cglib" }
@@ -48,3 +49,4 @@ org-springframework-spring-jdbc = { module = "org.springframework:spring-jdbc", 
 org-springframework-spring-web = { module = "org.springframework:spring-web", version.ref = "org-springframework-spring-web" }
 org-springframework-spring-webmvc = { module = "org.springframework:spring-webmvc", version.ref = "org-springframework-spring-webmvc" }
 taglibs-standard = { module = "taglibs:standard", version.ref = "taglibs-standard" }
+slf4j = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
