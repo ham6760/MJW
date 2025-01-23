@@ -10,3 +10,5 @@ target/
 # Gradle build artifacts
 /build/
 /.gradle/
+
+/src/main/resources/config/apikey.properties

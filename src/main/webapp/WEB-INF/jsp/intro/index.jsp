@@ -25,7 +25,7 @@
                     <h2 class="section-heading mb-4">
                         <span class="section-heading-upper">미장원</span>
                         <span class="section-heading-lower">by 태현</span>
-                    </h2>
+                    </h2>`
                     <p class="mb-5">안녕하세요. 김태현 입니다.
                         국내 최고의 디자이너 팀과 함께 보다 업그레이드된 기술과 최상의 서비스로 고객님을 모시겠습니다.
                         언제나 초심을 잃지않고 최선을 다하겠습니다.</p>
@@ -52,11 +52,11 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-0">
                 <div class="col-lg-6">
-                    <a class="portfolio-item" href="<c:url value="/intro/index"/>">
+                    <a class="portfolio-item" href="#!">
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="container px-4 px-lg-5 text-center">
-                                    <h1 class="mb-1 fs-2 text-nowrap">헤어</h1>
+                                    <h1 class="mb-1 fs-2 text-nowrap roboto">Hair</h1>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="container px-4 px-lg-5 text-center">
-                                    <h1 class="mb-1 fs-2 text-nowrap">메이크업</h1>
+                                    <h1 class="mb-1 fs-2 text-nowrap roboto">MakeUp</h1>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="container px-4 px-lg-5 text-center">
-                                    <h1 class="mb-1 fs-4 text-nowrap">웨딩</h1>
+                                    <h1 class="mb-1 fs-4 text-nowrap roboto">Wedding</h1>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="container px-4 px-lg-5 text-center">
-                                    <h1 class="mb-1 fs-4 text-nowrap">연예인</h1>
+                                    <h1 class="mb-1 fs-4 text-nowrap roboto">Star</h1>
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                         <div class="caption">
                             <div class="caption-content">
                                 <div class="container px-4 px-lg-5 text-center">
-                                    <h1 class="mb-1 fs-4 text-nowrap">네일아트</h1>
+                                    <h1 class="mb-1 fs-4 text-nowrap roboto">NailArt</h1>
                                 </div>
                             </div>
                         </div>
