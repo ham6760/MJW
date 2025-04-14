@@ -14,14 +14,14 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/")
-@PropertySource("classpath:/config/apikey.properties")
+@PropertySource("classpath:config/apikey.properties")
 public class HomeController extends BaseController {
 
     @Value("${api.key}")
@@ -32,7 +32,7 @@ public class HomeController extends BaseController {
 
     @GetMapping(value="")
     public String index(Model model) {
-        String searchUrl = String.format("https://www.googleapis.com/youtube/v3/search?key=%s&channelId=%s&part=snippet&type=video&order=date&maxResults=3",apiKey, channelId);
+        String searchUrl = String.format("https://www.googleapis.com/youtube/v3/search?key=%s&channelId=%s&part=snippet&type=video&order=date&maxResults=10",apiKey, channelId);
 
         try {
             // API 호출
@@ -54,19 +54,49 @@ public class HomeController extends BaseController {
 
             // 동영상 데이터를 리스트에 저장
             List<Map<String, String>> videos = new ArrayList<>();
+            List<String> videoIdList = new ArrayList<>();
+
             for (int i = 0; i < items.length(); i++) {
                 JSONObject item = items.getJSONObject(i);
                 JSONObject snippet = item.getJSONObject("snippet");
+                String videoId = item.getJSONObject("id").getString("videoId");
 
                 Map<String, String> videoData = new HashMap<>();
                 videoData.put("title", snippet.getString("title"));
                 videoData.put("thumbnail", snippet.getJSONObject("thumbnails").getJSONObject("medium").getString("url"));
                 videoData.put("videoId", item.getJSONObject("id").getString("videoId"));
                 videos.add(videoData);
+                videoIdList.add(videoId);
             }
 
+            String joinIds = String.join(",",videoIdList);
+            String detailUrl = String.format("https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=%s&key=%s", joinIds, apiKey);
+            HttpURLConnection detailConn = (HttpURLConnection) new URL(detailUrl).openConnection();
+            detailConn.setRequestMethod("GET");
+
+            BufferedReader detailReader = new BufferedReader(new InputStreamReader(detailConn.getInputStream(), "UTF-8"));
+            StringBuilder detailBuilder = new StringBuilder();
+            while ((line = detailReader.readLine()) != null) {
+                detailBuilder.append(line);
+            }
+            detailReader.close();
+
+            JSONObject detailResponse = new JSONObject(detailBuilder.toString());
+            JSONArray detailItems = detailResponse.getJSONArray("items");
+
+            Set<String> validVideoIds = new HashSet<>();
+            for (int i = 0; i < detailItems.length(); i++) {
+                JSONObject item = detailItems.getJSONObject(i);
+                String videoId = item.getString("id");
+                String duration = item.getJSONObject("contentDetails").getString("duration");
+
+                if (parseDuration(duration) > 60) validVideoIds.add(videoId);
+            }
+
+            List<Map<String, String>> finalVideos = videos.stream().filter(v -> validVideoIds.contains(v.get("videoId"))).limit(3).collect(Collectors.toList());
+
             // JSP에 데이터 전달
-            model.addAttribute("videos", videos);
+            model.addAttribute("videos", finalVideos);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -76,15 +106,14 @@ public class HomeController extends BaseController {
         return "index";
     }
 
-    private static boolean isLongerThan60Seconds(String duration) {
-        // Convert ISO 8601 duration (e.g., PT1M30S) to seconds
+    public static int parseDuration(String duration) {
         int minutes = 0, seconds = 0;
-        if (duration.contains("M")) {
-            minutes = Integer.parseInt(duration.substring(duration.indexOf("PT") + 2, duration.indexOf("M")));
+        Pattern pattern = Pattern.compile("PT(?:(\\d+)M)?(?:(\\d+)S)?");
+        Matcher matcher = pattern.matcher(duration);
+        if (matcher.matches()) {
+            if (matcher.group(1) != null) minutes = Integer.parseInt(matcher.group(1));
+            if (matcher.group(2) != null) seconds = Integer.parseInt(matcher.group(2));
         }
-        if (duration.contains("S")) {
-            seconds = Integer.parseInt(duration.substring(duration.indexOf("M") + 1, duration.indexOf("S")));
-        }
-        return (minutes * 60 + seconds) > 60;
+        return minutes * 60 + seconds;
     }
 }

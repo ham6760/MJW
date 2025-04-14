@@ -219,3 +219,27 @@ html, body {
 a {
     text-decoration-line: none;
 }
+
+.video_thumbnail {
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.video_thumbnail:hover {
+    transform: scale(1.05);
+}
+
+.video_thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video_title {
+    width: 100%;               /* 부모에 맞춤 */
+    white-space: nowrap;       /* 줄바꿈 안되게 */
+    overflow: hidden;          /* 넘치는 부분 숨김 */
+    text-overflow: ellipsis;   /* ... 표시 */
+    font-size: 16px;
+    margin-top: 8px;
+    color: white;
+}
