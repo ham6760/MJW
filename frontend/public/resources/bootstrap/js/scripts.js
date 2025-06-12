@@ -4,9 +4,6 @@
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-stylish-portfolio/blob/master/LICENSE)
 */
 window.addEventListener('DOMContentLoaded', event => {
-    document.addEventListener('mouseover',() => {
-
-    })
     let scrollToTopVisible = false;
 
     // Scroll to top button appear

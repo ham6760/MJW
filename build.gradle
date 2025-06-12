@@ -18,6 +18,13 @@ repositories {
     }
 }
 
+processResources {
+    from("src/main/resources/config/logback") {
+        include "logback.xml"
+        into ""
+    }
+}
+
 configurations.all {
     exclude(group: 'commons-logging', module: 'commons-logging')
 }
@@ -31,7 +38,7 @@ dependencies {
     api libs.org.springframework.spring.web
     api libs.javax.servlet.jstl
     api libs.taglibs.standard
-    api libs.cglib.cglib
+    //api libs.cglib.cglib
     api libs.org.mybatis.mybatis
     api libs.org.mybatis.mybatis.spring
     api libs.org.springframework.spring.jdbc
@@ -46,6 +53,9 @@ dependencies {
     compileOnly libs.javax.servlet.javax.servlet.api
     compileOnly libs.javax.servlet.jsp.jsp.api
     compileOnly libs.org.projectlombok.lombok
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.14.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.14.0'
 }
 
 group = 'com.bo'
@@ -68,3 +78,8 @@ tasks.withType(JavaCompile) {
 tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
 }
+
+/*task copyToWebInfLib(type: Copy) {
+    from configurations.runtimeClasspath
+    into "$projectDir/src/main/webapp/WEB-INF/lib"
+}*/

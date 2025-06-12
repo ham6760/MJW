@@ -5,10 +5,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -19,8 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-@Controller
-@RequestMapping("/")
+@RestController
 @PropertySource("classpath:config/apikey.properties")
 public class HomeController extends BaseController {
 
@@ -30,10 +28,16 @@ public class HomeController extends BaseController {
     @Value("${api.channelId}")
     private String channelId;
 
-    @GetMapping(value="")
-    public String index(Model model) {
-        String searchUrl = String.format("https://www.googleapis.com/youtube/v3/search?key=%s&channelId=%s&part=snippet&type=video&order=date&maxResults=10",apiKey, channelId);
+    @RequestMapping(value = "/{[path:[^\\.]*}")
+    public String redirect() {
+        return "forward:/index.html";
+    }
 
+    @GetMapping(value="/videos", produces = "application/json")
+    public List<Map<String, String>> getVideos() {
+        String searchUrl = String.format("https://www.googleapis.com/youtube/v3/search?key=%s&channelId=%s&part=snippet&type=video&order=date&maxResults=10", apiKey, channelId);
+
+        List<Map<String, String>> finalVideos = new ArrayList<>();
         try {
             // API 호출
             URL url = new URL(searchUrl);
@@ -69,7 +73,7 @@ public class HomeController extends BaseController {
                 videoIdList.add(videoId);
             }
 
-            String joinIds = String.join(",",videoIdList);
+            String joinIds = String.join(",", videoIdList);
             String detailUrl = String.format("https://www.googleapis.com/youtube/v3/videos?part=contentDetails&id=%s&key=%s", joinIds, apiKey);
             HttpURLConnection detailConn = (HttpURLConnection) new URL(detailUrl).openConnection();
             detailConn.setRequestMethod("GET");
@@ -93,17 +97,13 @@ public class HomeController extends BaseController {
                 if (parseDuration(duration) > 60) validVideoIds.add(videoId);
             }
 
-            List<Map<String, String>> finalVideos = videos.stream().filter(v -> validVideoIds.contains(v.get("videoId"))).limit(3).collect(Collectors.toList());
-
-            // JSP에 데이터 전달
-            model.addAttribute("videos", finalVideos);
+            finalVideos = videos.stream().filter(v -> validVideoIds.contains(v.get("videoId"))).limit(3).collect(Collectors.toList());
 
         } catch (Exception e) {
             e.printStackTrace();
-            model.addAttribute("error", "Failed to load YouTube videos.");
         }
 
-        return "index";
+        return finalVideos;
     }
 
     public static int parseDuration(String duration) {
