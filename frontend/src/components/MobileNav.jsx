@@ -6,9 +6,9 @@ const menuData = [
         key: "intro",
         label: "Intro",
         items: [
-            { to: "/intro/index", label: "인사말 | Greeting | 问候语" },
-            { to: "#", label: "샵 | Shop | 店" },
-            { to: "#", label: "오시는길 | Location | 位置" }
+            { to: "/intro", label: "인사말 | Greeting | 问候语" },
+            { to: "/shop", label: "샵 | Shop | 店" },
+            { to: "/location", label: "오시는길 | Location | 位置" }
         ]
     },
     {
@@ -79,9 +79,10 @@ const MobileNav = () => {
                     {/* mo-navbar */}
                     <div className="mo-navbar">
                         <Link className="navbar-brand" to="/">
-                            <img src="/resources/img/main/logo.png" alt="로고" />
+                            <img src="/resources/img/main/logo.png" alt="로고"/>
                         </Link>
-                        <div id="nav-icon1" className={`mo-navbar-btn mo-btn-open ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} >
+                        <div id="nav-icon1" className={`mo-navbar-btn mo-btn-open ${menuOpen ? 'open' : ''}`}
+                             onClick={toggleMenu}>
                             <span></span>
                             <span></span>
                             <span></span>
@@ -89,23 +90,23 @@ const MobileNav = () => {
                     </div>
 
                     {/* mo-navbar-container */}
-                    <div className="mo-navbar-container" style={{left: menuOpen ? '0%' : '-100%', transition: 'left 0.7s',}} >
+                    <div className="mo-navbar-container"
+                         style={{left: menuOpen ? '0%' : '-100%', transition: 'left 0.7s',}}>
                         <nav className="mo-navbar-gnb accordion" id="navbar">
                             <ul className="sidebar-ul">
                                 {menuData.map((menu) => (
                                     <li key={menu.key}>
-                                        <a href="#" className="nav-link collapsed" data-bs-toggle="collapse" data-bs-target={`#${menu.key}`} aria-expanded="false" aria-controls={menu.key} >
-                                            {menu.label}
+                                        <Link to="#" className="nav-link collapsed" data-bs-toggle="collapse" data-bs-target={`#${menu.key}`} aria-expanded="false" aria-controls={menu.key}> {menu.label}
                                             <div className="sb-sidenav-collapse-arrow">
                                                 <i className="fas fa-angle-down"></i>
                                             </div>
-                                        </a>
-                                        <div className="collapse" id={menu.key} data-bs-parent="#navbar" >
+                                        </Link>
+                                        <div className="collapse" id={menu.key} data-bs-parent="#navbar">
                                             <nav className="sb-sidenav-menu-nested nav">
                                                 {menu.items.map((item, index) => (
-                                                    <a className="nav-link" href={item.to} key={index}>
+                                                    <Link className="nav-link" to={item.to} key={index}>
                                                         {item.label}
-                                                    </a>
+                                                    </Link>
                                                 ))}
                                             </nav>
                                         </div>

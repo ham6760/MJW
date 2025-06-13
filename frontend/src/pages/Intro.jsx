@@ -1,47 +1,5 @@
 import React from "react";
-
-const pfData = [
-    {
-        key: "hair",
-        label: "Hair",
-        fontClass: 2,
-        imgSize: 6,
-        image: "main_photo1.png",
-        alt: "헤어_이미지"
-    },
-    {
-        key: "makeup",
-        label: "MakeUp",
-        fontClass: 2,
-        imgSize: 6,
-        image: "main_photo1.png",
-        alt: "메이크업_이미지"
-    },
-    {
-        key: "wedding",
-        label: "Wedding",
-        fontClass: 4,
-        imgSize: 4,
-        image: "main_photo1.png",
-        alt: "웨딩_이미지"
-    },
-    {
-        key: "star",
-        label: "Star",
-        fontClass: 4,
-        imgSize: 4,
-        image: "main_photo1.png",
-        alt: "연예인_이미지"
-    },
-    {
-        key: "nailArt",
-        label: "NailArt",
-        fontClass: 4,
-        imgSize: 4,
-        image: "main_photo1.png",
-        alt: "네일_이미지"
-    }
-];
+import { Link } from 'react-router-dom';
 
 const Intro = () => {
     return (
@@ -50,9 +8,9 @@ const Intro = () => {
             <div className="sub_menu w33p">
                 <div className="inner">
                     <ul>
-                        <li className="cur"><strong><a href="#">인사말</a></strong></li>
-                        <li><strong><a href="#" onClick="">샵</a></strong></li>
-                        <li><strong><a href="#" onClick="">오시는길</a></strong></li>
+                        <li className="cur"><strong><Link to="#">인사말</Link></strong></li>
+                        <li><strong><Link to="/shop" onClick="">샵</Link></strong></li>
+                        <li><strong><Link to="/location">오시는길</Link></strong></li>
                     </ul>
                 </div>
             </div>
@@ -77,26 +35,6 @@ const Intro = () => {
                 </div>
             </section>
 
-            <section className="content-section" id="portfolio">
-                <div className="container px-4 px-lg-5">
-                    <div className="row gx-0">
-                        {pfData.map((item) => (
-                            <div key={item.key} className={`col-lg-${item.imgSize}`}>
-                                <a className="portfolio-item" href="#">
-                                    <div className="caption">
-                                        <div className="caption-content">
-                                            <div className="container px-4 px-lg-5 text-center">
-                                                <h1 className={`mb-1 fs-${item.fontClass} text-nowrap roboto`}>{item.label}</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <img className="img-fluid" src={`/resources/img/main/${item.image}`} alt={item.alt}/>
-                                </a>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
         </div>
     )
 }

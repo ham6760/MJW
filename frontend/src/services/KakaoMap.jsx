@@ -38,7 +38,12 @@ const KakaoMap = () => {
         document.head.appendChild(script);
     }, []);
 
-    return <div className="map" id="map"></div>;
+    return (
+        <div className="location">
+            <div className="map" id="map"></div>
+        </div>
+    )
+
 
 };
 export default KakaoMap;

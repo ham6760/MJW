@@ -9,20 +9,24 @@ const Layout = ({ children }) => {
         <>
 
             {/* Header */}
-            <Header />
+            <Header/>
 
-            <MobileNav />
+            <MobileNav/>
 
             {/* Content */}
             <main>{children}</main>
 
+            <a className="scroll-to-top rounded" href="#page-top">
+                <i className="fas fa-angle-up"></i>
+            </a>
+
             {/* Footer */}
-            <Footer />
+            <Footer/>
 
             {/* JS Scripts */}
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-            {/*<script src="/resources/js/mjw.js"></script>*/}
-            <script src="/resources/bootstrap/js/scripts.js"></script>
+            <script src="/resources/js/mjw.js"></script>
+            <script src="/resources/js/scripts.js"></script>
         </>
     );
 };
