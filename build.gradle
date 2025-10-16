@@ -62,7 +62,7 @@ tasks.withType(Javadoc) {
 }
 
 springBoot {
-    mainClass = 'com.bo.MjwNewApplication'
+    mainClass = 'com.bo.MjwApplication'
 }
 
 bootJar {
