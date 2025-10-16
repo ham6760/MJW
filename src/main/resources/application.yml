@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: mjw_new
+  #datasource:
+    #url: jdbc:mysql://158.180.95.24:3306/MJW
+    #username: mjw
+    #password: h1a2m3m4i5n6!@
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+    web: debug
+    org.hibernate.type: trace                   # 콘솔차에 조건에 바인딩되는 값 및 조회 결과 출력
+    org.hibernate.SQL: debug                    # logger를 통해 하이버네이트 실행 SQL
+    org.hibernate.type.descriptor.sql: trace    # sql의 ? 값을 Parameter로 보여줌.

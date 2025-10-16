@@ -3,72 +3,62 @@
  */
 
 plugins {
-    id 'java-library'
-    id 'maven-publish'
-}
-
-repositories {
-    mavenLocal()
-    maven {
-        url = uri('https://repo.spring.io/libs-release')
-    }
-
-    maven {
-        url = uri('https://repo.maven.apache.org/maven2/')
-    }
-}
-
-processResources {
-    from("src/main/resources/config/logback") {
-        include "logback.xml"
-        into ""
-    }
-}
-
-configurations.all {
-    exclude(group: 'commons-logging', module: 'commons-logging')
-}
-
-dependencies {
-    api libs.org.springframework.spring.context
-    api libs.org.springframework.spring.beans
-    api libs.org.springframework.spring.core
-    api libs.org.springframework.spring.aop
-    api libs.org.springframework.spring.webmvc
-    api libs.org.springframework.spring.web
-    api libs.javax.servlet.jstl
-    api libs.taglibs.standard
-    //api libs.cglib.cglib
-    api libs.org.mybatis.mybatis
-    api libs.org.mybatis.mybatis.spring
-    api libs.org.springframework.spring.jdbc
-    api libs.org.apache.httpcomponents.httpclient
-    api libs.org.json.json
-    api libs.ch.qos.logback.logback.classic
-    api libs.org.apache.tiles.tiles.extras
-    api libs.org.apache.tiles.tiles.servlet
-    api libs.org.apache.tiles.tiles.jsp
-    api libs.slf4j
-    testImplementation libs.junit.junit
-    compileOnly libs.javax.servlet.javax.servlet.api
-    compileOnly libs.javax.servlet.jsp.jsp.api
-    compileOnly libs.org.projectlombok.lombok
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.14.0'
-    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.14.0'
+    id 'java'
+    id 'org.springframework.boot' version '3.5.3'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.bo'
-version = '1.0-SNAPSHOT'
+version = '0.0.1-SNAPSHOT'
 description = 'MJW'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Starters
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web-services'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+    // Jackson
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.14.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.14.0'
+
+    // HTTP Client
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+
+    // DB Driver
+    runtimeOnly 'com.mysql:mysql-connector-j:8.2.0'
+
+    // Lombok
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Dev
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+
 }
 
 tasks.withType(JavaCompile) {
@@ -79,7 +69,6 @@ tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
 }
 
-/*task copyToWebInfLib(type: Copy) {
-    from configurations.runtimeClasspath
-    into "$projectDir/src/main/webapp/WEB-INF/lib"
-}*/
+bootJar {
+    enabled = true
+}

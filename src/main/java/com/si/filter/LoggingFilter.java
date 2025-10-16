@@ -1,47 +1,51 @@
 package com.si.filter;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 
+@Component
+@Order(1)
 public class LoggingFilter implements Filter {
 
     private static final Logger logger = LoggerFactory.getLogger(LoggingFilter.class);
-
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {}
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
         HttpServletRequest httpRequest = (HttpServletRequest) request;
-        String url = httpRequest.getRequestURI();
+
         String method = httpRequest.getMethod();
-
-        // 요청 URL과 메서드 로깅
-        logger.info("Request URL: {} {}", method, url);
-
-        // 요청 파라미터 로깅
-        Enumeration<String> parameterNames = request.getParameterNames();
-        while (parameterNames.hasMoreElements()) {
-            String paramName = parameterNames.nextElement();
-            String paramValue = request.getParameter(paramName);
-            logger.info("Request Param: {}={}", paramName, paramValue);
+        StringBuffer url = httpRequest.getRequestURL();
+        String queryString = httpRequest.getQueryString();
+        if (queryString != null) {
+            url.append("?").append(queryString);
         }
 
-        // 다음 필터로 요청 전달
+        Map<String, String> params = new HashMap<>();
+        Enumeration<String> paramNames = httpRequest.getParameterNames();
+        while (paramNames.hasMoreElements()) {
+            String name = paramNames.nextElement();
+            params.put(name, httpRequest.getParameter(name));
+        }
+
+        logger.info("[REQUEST] Method: {}, URL: {}, Params: {}", method, url.toString(), params);
+
         chain.doFilter(request, response);
     }
-
-    @Override
-    public void destroy() {}
 }
