@@ -392,7 +392,7 @@ const Home = () => {
       <SectionBox id="portfolio_menu" data-aos="fade-up" data-aos-delay="300">
         <Container maxWidth="xl">
           <SectionTitle variant="h2" component="h1" data-aos="fade-down">
-            Portfolio
+            Portfolio(포트폴리오)
           </SectionTitle>
 
           {/* 첫 번째 줄: Hair, MakeUp */}
