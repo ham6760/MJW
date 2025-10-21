@@ -65,6 +65,7 @@ jobs:
           source: "build/libs/*.jar"
           target: "/data/docker/volumes/mjw/app/"
           strip_components: 2
+          timeout: 30s
 
       - name: Restart Container
         uses: appleboy/ssh-action@v1.0.3
