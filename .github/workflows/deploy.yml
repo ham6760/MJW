@@ -1,78 +1,24 @@
-name: Build and Deploy
+name: Test SSH
 
 on:
   push:
     branches: [ mjw ]
 
 jobs:
-  build-and-deploy:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Check frontend directory
-        run: |
-          ls -la
-          ls -la frontend/ || echo "frontend directory not found"
-
-      - name: Build React
-        run: |
-          cd frontend
-          npm ci
-          npm run build
-        continue-on-error: false
-
-      - name: Verify React build
-        run: |
-          ls -la frontend/build/ || echo "Build folder not created"
-
-      - name: Copy React to Spring Boot
-        run: |
-          mkdir -p src/main/resources/static
-          if [ -d "frontend/build" ]; then
-            cp -r frontend/build/* src/main/resources/static/
-            echo "React build copied successfully"
-          else
-            echo "No React build found, skipping..."
-          fi
-
-      - name: Build with Gradle
-        run: chmod +x gradlew && ./gradlew clean bootJar -x test
-
-      - name: Check JAR
-        run: ls -la build/libs/
-
-      - name: Deploy JAR to Server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          port: ${{ secrets.SERVER_PORT }}
-          source: "build/libs/*.jar"
-          target: "/data/docker/volumes/mjw/app/"
-          strip_components: 2
-          timeout: 30s
-
-      - name: Restart Container
+      - name: Test SSH Connection
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SERVER_HOST }}
+          port: ${{ secrets.SERVER_PORT }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_SSH_KEY }}
+          timeout: 60s
           script: |
-            cd /data/docker/compose/
-            docker-compose -f /data/docker/compose/docker-compose.yml restart mjw
+            echo "SSH Connection OK"
+            whoami
+            pwd
+            ls -la /data/docker/volumes/mjw/app/
