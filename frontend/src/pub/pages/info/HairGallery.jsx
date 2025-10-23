@@ -1,6 +1,5 @@
 import React from "react";
-
-import PageTop from "../../shared/components/PageTop";
+import PageTop from "shared/components/PageTop";
 
 const HairGallery = () => {
   return (

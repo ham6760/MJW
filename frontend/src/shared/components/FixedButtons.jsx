@@ -3,8 +3,7 @@ import { KeyboardArrowUp } from "@mui/icons-material";
 import { Box, Fab, useMediaQuery, Zoom } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
-
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "context/ThemeContext";
 
 // 고정 버튼들 컨테이너
 const FixedButtonsContainer = styled(Box)(({ theme }) => ({

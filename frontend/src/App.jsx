@@ -1,14 +1,14 @@
 import { React, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AOS from "aos";
+import Home from "pub/pages/Home";
+import NotFound from "pub/pages/notfound/NotFound";
+import UserDetail from "pub/pages/UserDetail";
+import SmoothScrollWrapper from "shared/components/SmoothScrollWrapper";
+import { ThemeProvider } from "shared/context/ThemeContext"; // 통합된 ThemeProvider
+import Layout from "shared/layout/Layout";
 
-import Home from "./pub/pages/Home";
-import NotFound from "./pub/pages/notfound/NotFound";
-import UserDetail from "./pub/pages/UserDetail";
 import { hair, intro, makeUp, wedding } from "./router";
-import SmoothScrollWrapper from "./shared/components/SmoothScrollWrapper";
-import { ThemeProvider } from "./shared/context/ThemeContext"; // 통합된 ThemeProvider
-import Layout from "./shared/layout/Layout";
 
 function App() {
   // App.js

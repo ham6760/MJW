@@ -13,8 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
-
-import IconBlock from "../../shared/components/Icons";
+import IconBlock from "shared/components/Icons";
 
 const SPACING = { section: 8, card: 4, title: 6 };
 

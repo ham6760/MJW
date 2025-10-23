@@ -24,11 +24,10 @@ import {
   useMediaQuery,
   useTheme as useMuiTheme,
 } from "@mui/material";
+import FixedButtons from "shared/components/FixedButtons";
+import { useTheme } from "shared/context/ThemeContext";
 
 import DropdownMenu from "./DropdownMenu";
-
-import { useTheme } from "../../shared/context/ThemeContext";
-import FixedButtons from "../components/FixedButtons";
 
 const menuData = [
   {

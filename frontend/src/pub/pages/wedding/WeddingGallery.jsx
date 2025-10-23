@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Container } from "@mui/material";
-
-import CircularGallery from "../../shared/components/circularGallery/CircularGallery";
-import PageTop from "../../shared/components/PageTop";
-import { usePageConfig } from "../../shared/hooks/usePageConfig";
+import CircularGallery from "shared/components/circularGallery/CircularGallery";
+import PageTop from "shared/components/PageTop";
+import { usePageConfig } from "shared/hooks/usePageConfig";
 
 const WeddingGallery = () => {
   const pageData = usePageConfig();

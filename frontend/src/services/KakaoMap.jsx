@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 import { Box, Container } from "@mui/material";
 import { useTheme as useMuiTheme } from "@mui/material/styles";
-
-import { useTheme } from "../shared/context/ThemeContext";
+import { useTheme } from "shared/context/ThemeContext";
 
 const KakaoMap = () => {
   const { isDarkMode } = useTheme(); // 커스텀 다크모드 상태

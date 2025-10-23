@@ -10,8 +10,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-
-import PageTop from "../../shared/components/PageTop";
+import PageTop from "shared/components/PageTop";
 
 const images = [
   "/resources/img/shop/shop_img_1.jpg",

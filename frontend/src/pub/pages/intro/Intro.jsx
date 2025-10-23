@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Button, Paper, Typography } from "@mui/material";
-
-import BlurText from "../../shared/components/BlurText";
-import PageTop from "../../shared/components/PageTop";
-import { useTheme } from "../../shared/context/ThemeContext";
+import BlurText from "shared/components/BlurText";
+import PageTop from "shared/components/PageTop";
+import { useTheme } from "shared/context/ThemeContext";
 
 const Intro = () => {
   const { isDarkMode } = useTheme();

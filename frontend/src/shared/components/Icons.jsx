@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-
-import { useTheme } from "../context/ThemeContext";
+import { useTheme } from "context/ThemeContext";
 
 const icons = {
   smartStore: () => {

@@ -1,8 +1,7 @@
 import React from "react";
-
-import KakaoMap from "../../../services/KakaoMap";
-import PageTop from "../../../shared/components/PageTop";
-import { useTheme } from "../../../shared/context/ThemeContext";
+import KakaoMap from "services/KakaoMap";
+import PageTop from "shared/components/PageTop";
+import { useTheme } from "shared/context/ThemeContext";
 
 const Location = () => {
   const { isDarkMode } = useTheme();

@@ -1,8 +1,7 @@
 import React from "react";
-
-import ChromaGrid from "../../shared/components/chromaGrid/ChromaGrid";
-import PageTop from "../../shared/components/PageTop";
-import { usePageConfig } from "../../shared/hooks/usePageConfig";
+import ChromaGrid from "shared/components/chromaGrid/ChromaGrid";
+import PageTop from "shared/components/PageTop";
+import { usePageConfig } from "shared/hooks/usePageConfig";
 
 const MakeUpList = () => {
   const pageData = usePageConfig();
