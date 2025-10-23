@@ -8,6 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -32,6 +33,7 @@ public class HomeController extends BaseController {
     }
 
     @GetMapping(value="/videos", produces = "application/json")
+    @ResponseBody
     public List<Map<String, String>> getVideos() {
         String searchUrl = String.format("https://www.googleapis.com/youtube/v3/search?key=%s&channelId=%s&part=snippet&type=video&order=date&maxResults=10", apiKey, channelId);
 
