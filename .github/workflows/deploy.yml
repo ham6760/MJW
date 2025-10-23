@@ -28,6 +28,12 @@ jobs:
           ls -la
           ls -la frontend/ || echo "frontend directory not found"
 
+      - name: Create React .env file
+        run: |
+          cat > frontend/.env << EOF
+          REACT_APP_KAKAO_MAP_KEY=${{ secrets.REACT_APP_KAKAO_MAP_KEY }}
+          EOF
+
       - name: Build React
         run: |
           cd frontend
@@ -48,6 +54,13 @@ jobs:
           else
             echo "No React build found, skipping..."
           fi
+
+      - name: Create application.properties
+        run: |
+          cat > src/main/resources/application.properties << EOF
+          # API Keys
+          api.key=${{ secrets.API_KEY }}
+          api.channelId=${{ secrets.API_CHANNEL_ID }}
 
       - name: Build with Gradle
         run: chmod +x gradlew && ./gradlew clean bootJar -x test
