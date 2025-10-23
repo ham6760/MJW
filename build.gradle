@@ -52,3 +52,5 @@ bootJar {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+processResources.dependsOn copyReact
