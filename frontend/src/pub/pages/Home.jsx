@@ -382,7 +382,7 @@ const Home = () => {
               color="textSecondary"
               data-aos="fade-in"
             >
-              YouTube 콘텐츠를 불러오는 중입니다 !
+              YouTube 콘텐츠를 불러오는 중입니다...
             </Typography>
           )}
         </Container>

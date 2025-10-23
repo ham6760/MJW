@@ -57,7 +57,7 @@ jobs:
 
       - name: Create application.properties
         run: |
-          cat > src/main/resources/application.properties << EOF
+          cat > src/resources/config/apikey.properties << EOF
           # API Keys
           api.key=${{ secrets.API_KEY }}
           api.channelId=${{ secrets.API_CHANNEL_ID }}
