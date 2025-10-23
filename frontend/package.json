@@ -41,7 +41,7 @@
     "swiper": "^11.2.8",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost:8080",
+  "proxy": "http://mjwbytaehyun.r-e.kr:8080",
   "eslintConfig": {
     "extends": [
       "react-app",
